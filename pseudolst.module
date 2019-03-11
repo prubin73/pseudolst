@@ -1,0 +1,27 @@
+#\DeclareLyXModule[listings.sty]{Pseudocode listing}
+#DescriptionBegin
+# Adds support for pseudocode listings in a LyX "Program Listing" inset (using the listings LaTeX package).
+# For more details, see pseudolst.lyx.
+# Package(s) required: listings.sty
+#DescriptionEnd
+# Author: Paul A. Rubin <rubin@msu.edu>
+Format 66
+Preamble
+  \newcommand{\vbar}{\,\vrule}
+  \usepackage{listings}
+  \lstdefinelanguage{pseudocode} {
+    morekeywords={
+      begin, do, else, "else if", end, endfor, endif, endwhile,
+      for, foreach, function, if, in, Input:, Output:, procedure, 
+      repeat, Require:, return, then, until, while
+    },
+    sensitive=true,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    alsodigit={:},
+    escapechar={`}
+  }
+EndPreamble
+
+

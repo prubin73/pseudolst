@@ -1,0 +1,1052 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+pseudolst
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Pseudocode Listings in \SpecialChar LyX
+
+\end_layout
+
+\begin_layout Author
+Paul A.
+ Rubin (rubin@msu.edu)
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Pseudocode listing
+\series default
+ module (file pseudolst.module) is intended to facilitate creating pseudocode
+ listings in \SpecialChar LyX
+, with program listing insets.
+ It requires the 
+\family typewriter
+listings
+\family default
+ \SpecialChar LaTeX
+ package.
+ (Program listings can also use the 
+\family typewriter
+minted
+\family default
+ package, but this module is incompatible with 
+\family typewriter
+minted
+\family default
+.)
+\end_layout
+
+\begin_layout Standard
+As an example, here is a pseudocode listing for Euclid's algorithm to compute
+ the greatest common divisor of two integers.
+ To see how it looks, just compile this document (after installing the module).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "numbers=left,mathescape=true,frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Input: Positive integers $m$ and $n$
+\end_layout
+
+\begin_layout Plain Layout
+
+Output: Greatest common divisor of $m$ and $n$
+\end_layout
+
+\begin_layout Plain Layout
+
+function gcd(m, n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  $x
+\backslash
+gets 
+\backslash
+max(m, n)$
+\end_layout
+
+\begin_layout Plain Layout
+
+  $y
+\backslash
+gets 
+\backslash
+min(m, n)$
+\end_layout
+
+\begin_layout Plain Layout
+
+  while ($y>0$) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    $z
+\backslash
+gets x 
+\backslash
+bmod y$
+\end_layout
+
+\begin_layout Plain Layout
+
+    $x 
+\backslash
+gets y$
+\end_layout
+
+\begin_layout Plain Layout
+
+    $y 
+\backslash
+gets z$
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  return $x$
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Installation
+\end_layout
+
+\begin_layout Standard
+The first step is to make sure that you have the 
+\family typewriter
+listings
+\family default
+ package.
+ If you are not sure, on most systems you can open a command prompt / terminal
+ and run '
+\family typewriter
+kpsewhich listings.sty
+\family default
+'.
+ That should return the location of the 
+\family typewriter
+listings
+\family default
+ style file.
+ If you get no output, 
+\family typewriter
+listings
+\family default
+ is not installed, and you will need to install it the same way you install
+ other \SpecialChar LaTeX
+ packages.
+\end_layout
+
+\begin_layout Standard
+The second step is to install the 
+\family typewriter
+pseudolst.module
+\family default
+ file in your local layouts directory.
+ If you are not sure where that is, select 
+\family typewriter
+Help > About \SpecialChar LyX
+
+\family default
+, find the entry marked 
+\begin_inset Quotes eld
+\end_inset
+
+User directory:
+\begin_inset Quotes erd
+\end_inset
+
+, and look for a folder named layouts under that directory.
+ Plop the module file into that folder.
+\end_layout
+
+\begin_layout Standard
+The third and final step is to reconfigure \SpecialChar LyX
+ and restart it.
+\end_layout
+
+\begin_layout Section
+Usage
+\end_layout
+
+\begin_layout Standard
+To insert a pseudocode listing, first create a program listing inset via
+ 
+\family typewriter
+Insert > Program Listing
+\family default
+.
+ The 
+\family typewriter
+Embedded Objects
+\family default
+ help file contains details about usage of program listing insets, which
+ I will not repeat here.
+ There are a few tricky bits that I will explain.
+\end_layout
+
+\begin_layout Standard
+After inserting an empty program listing inset, right click it and select
+ 
+\family typewriter
+Settings...
+\family default
+, then make any adjustments you want.
+ On the 
+\begin_inset Quotes eld
+\end_inset
+
+Main Settings
+\begin_inset Quotes erd
+\end_inset
+
+ tab, leave the language in its default setting (
+\begin_inset Quotes eld
+\end_inset
+
+No language
+\begin_inset Quotes erd
+\end_inset
+
+).
+ On the 
+\begin_inset Quotes eld
+\end_inset
+
+Advanced
+\begin_inset Quotes erd
+\end_inset
+
+ tab, I recommend you make any parameter changes 
+\emph on
+before
+\emph default
+ setting the language.
+ Once you are ready, add 
+\begin_inset Quotes eld
+\end_inset
+
+language=pseudocode
+\begin_inset Quotes erd
+\end_inset
+
+ (without the quotation marks) in the right-hand box and select the option
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Bypass validation
+\begin_inset Quotes erd
+\end_inset
+
+.
+ (The reason for making other settings changes first is that \SpecialChar LyX
+ offers a nice
+ feature that lets you type a question mark (?) in the right-hand box and
+ get help with parameter settings.
+ Selecting 
+\begin_inset Quotes eld
+\end_inset
+
+Bypass validation
+\begin_inset Quotes erd
+\end_inset
+
+ turns that feature off.
+ Not selecting 
+\begin_inset Quotes eld
+\end_inset
+
+Bypass validation
+\begin_inset Quotes erd
+\end_inset
+
+ after setting the language will cause \SpecialChar LyX
+ to obsess about the fact that pseudocode
+ is not one of the predefined languages.)
+\end_layout
+
+\begin_layout Standard
+Now just type your pseudocode into the inset.
+ No special formatting will be done within \SpecialChar LyX
+, but in the output recognized
+ keywords will be highlighted, lines will be numbered (if you so choose
+ in the settings), etc.
+\end_layout
+
+\begin_layout Subsection
+Line formatting
+\end_layout
+
+\begin_layout Standard
+Neither this module nor the code listing inset dictates a particular layout
+ (indentation style).
+ You can use spaces or tabs to indent lines to your own taste.
+ In the advanced settings of the listing inset, use 
+\begin_inset Quotes eld
+\end_inset
+
+tab=<some number>
+\begin_inset Quotes erd
+\end_inset
+
+ to set the number of spaces to which each tab character expands, and 
+\begin_inset Quotes eld
+\end_inset
+
+lineskip=<dimension>
+\begin_inset Quotes erd
+\end_inset
+
+ to add space between lines.
+\end_layout
+
+\begin_layout Subsection
+Mathematics
+\end_layout
+
+\begin_layout Standard
+The module recognizes dollar signs ($) as math delimiters.
+ This allows you to enter mathematical notation in your listings.
+ \SpecialChar LyX
+ will not open a math inset inside a program listing, however, so you have
+ to enter raw \SpecialChar LaTeX
+ between the dollar signs.
+ As the embedded objects manual points out, you can still use \SpecialChar LyX
+'s math editing
+ features, albeit indirectly.
+ Open a math inset outside the listing and create your formula.
+ Select the entire contents of the inset (but not the inset itself!), copy
+ it to the clipboard, then paste it between the dollar signs in the listing.
+\end_layout
+
+\begin_layout Standard
+If you need to include a literal dollar sign in your listing, you will have
+ to embed it in a mathematical formula.
+ Enter 
+\begin_inset Quotes eld
+\end_inset
+
+$
+\backslash
+$$
+\begin_inset Quotes erd
+\end_inset
+
+ (without the quotes) to get a simple dollar sign in the output.
+\end_layout
+
+\begin_layout Subsection
+Comments
+\end_layout
+
+\begin_layout Standard
+The module is configured to treat 
+\begin_inset Quotes eld
+\end_inset
+
+//
+\begin_inset Quotes erd
+\end_inset
+
+ as the start of an inline comment and 
+\begin_inset Quotes eld
+\end_inset
+
+/* \SpecialChar ldots
+ */
+\begin_inset Quotes erd
+\end_inset
+
+ as a longer, or multi-line, comment.
+ The following example includes a few comments.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "numbers=left,mathescape=true,frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+procedure erase(list) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  /* Scan the list and delete any naughty words.
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+  for (item in list) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (isNaughty(item)   // isNaughty() does what it sounds like for
+\end_layout
+
+\begin_layout Plain Layout
+
+    then remove(item)
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As with everything else, you can edit the module file to change the comment
+ delimiters if you wish.
+\end_layout
+
+\begin_layout Subsection
+Raw \SpecialChar LaTeX
+ in Listings
+\end_layout
+
+\begin_layout Standard
+The module reserves the backtick (`) as an escape character.
+ Anything between a pair of backticks is treated as raw \SpecialChar LaTeX
+.
+ If you need literal backticks in your listings, you can change the 
+\begin_inset Quotes eld
+\end_inset
+
+escapechar={`}
+\begin_inset Quotes erd
+\end_inset
+
+ line in the module (or delete it if you never need to enter raw \SpecialChar LaTeX
+).
+ Alternatively, you can just surround a backtick with dollar signs to treat
+ it as a literal.
+\end_layout
+
+\begin_layout Subsection
+Vertical Bars
+\end_layout
+
+\begin_layout Standard
+Some people like to provide visual cues for the span of a loop or code block
+ by providing a vertical line.
+ The 
+\family typewriter
+listings
+\family default
+ package does not support this, but the module provides a (somewhat tedious)
+ kludge.
+ It defines a command (
+\family typewriter
+
+\backslash
+vbar
+\family default
+) that draws a vertical line character with a little bit of space in front
+ of it (to help align it with the character above it).
+ If you type 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+`
+\backslash
+vbar`
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+ (without the double quotes) where you would like the vertical line, the
+ output will (hopefully) (maybe) have vertical lines in the correct places.
+ The following listing demonstrates this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "keywordstyle={\color{blue}\bfseries},frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (some condition)
+\end_layout
+
+\begin_layout Plain Layout
+
+`
+\backslash
+vbar` eat
+\end_layout
+
+\begin_layout Plain Layout
+
+`
+\backslash
+vbar` drink
+\end_layout
+
+\begin_layout Plain Layout
+
+`
+\backslash
+vbar` be merry
+\end_layout
+
+\begin_layout Plain Layout
+
+else
+\end_layout
+
+\begin_layout Plain Layout
+
+`
+\backslash
+vbar` pay your taxes
+\end_layout
+
+\begin_layout Plain Layout
+
+`
+\backslash
+vbar` drink even more
+\end_layout
+
+\begin_layout Plain Layout
+
+endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you want to adjust the horizontal spacing of the vertical bars, feel
+ free to edit the module file.
+ The default definition of 
+\family typewriter
+
+\backslash
+vbar
+\family default
+ is 
+\family typewriter
+
+\backslash
+,
+\backslash
+vrule
+\family default
+; try changing 
+\family typewriter
+
+\backslash
+,
+\family default
+ to something else (perhaps 
+\family typewriter
+
+\backslash
+enspace
+\family default
+) to shift the line horizontally.
+\end_layout
+
+\begin_layout Standard
+You may note that the keywords in this example are colored.
+ Look at the advanced tab of the settings for the listing to see how.
+\end_layout
+
+\begin_layout Subsection
+Line References
+\end_layout
+
+\begin_layout Standard
+It is common to refer to specific lines in a listing.
+ This can be done using the pseudocode module, but it is a bit finicky compared
+ to the way \SpecialChar LyX
+ normally handles cross-references.
+\end_layout
+
+\begin_layout Standard
+You will want to turn on line numbering (in the settings dialog for your
+ listing).
+ Ordinarily, your next step would be to use the 
+\family typewriter
+Insert
+\family default
+ menu to insert a label in the line you wish to reference, but unfortunately
+ \SpecialChar LyX
+ disables label insertion inside listings.
+ So we do this manually, by typing 
+\family typewriter
+`
+\backslash
+label{some label}`
+\family default
+ in the desired location.
+\end_layout
+
+\begin_layout Standard
+Placing the cross-reference in the text can be done with 
+\family typewriter
+Insert > Cross-Reference...
+\family default
+, with a couple of caveats.
+ First, the cross-reference dialog will not find your label, so you will
+ have to type it into the 
+\begin_inset Quotes eld
+\end_inset
+
+Selected Label:
+\begin_inset Quotes erd
+\end_inset
+
+ box.
+ Second, the inserted cross-reference will be marked 
+\begin_inset Quotes eld
+\end_inset
+
+BROKEN
+\begin_inset Quotes erd
+\end_inset
+
+ by \SpecialChar LyX
+, so you will need a little faith.
+\end_layout
+
+\begin_layout Standard
+We repeat Euclid's algorithm below, this time containing a reference to
+ the line with the modulus operator.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "numbers=left,mathescape=true,frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Input: Positive integers $m$ and $n$
+\end_layout
+
+\begin_layout Plain Layout
+
+Output: Greatest common divisor of $m$ and $n$
+\end_layout
+
+\begin_layout Plain Layout
+
+function gcd(m, n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  $x
+\backslash
+gets 
+\backslash
+max(m, n)$
+\end_layout
+
+\begin_layout Plain Layout
+
+  $y
+\backslash
+gets 
+\backslash
+min(m, n)$
+\end_layout
+
+\begin_layout Plain Layout
+
+  while ($y>0$) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    $z
+\backslash
+gets x 
+\backslash
+bmod y$ `
+\backslash
+label{alg:mod_op}`
+\end_layout
+
+\begin_layout Plain Layout
+
+    $x 
+\backslash
+gets y$
+\end_layout
+
+\begin_layout Plain Layout
+
+    $y 
+\backslash
+gets z$
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  return $x$
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The modulus operator occurs in line 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:mod_op"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Keywords
+\end_layout
+
+\begin_layout Standard
+The following keywords are recognized by the module:
+\end_layout
+
+\begin_layout Itemize
+begin
+\end_layout
+
+\begin_layout Itemize
+do
+\end_layout
+
+\begin_layout Itemize
+else
+\end_layout
+
+\begin_layout Itemize
+else if
+\end_layout
+
+\begin_layout Itemize
+end
+\end_layout
+
+\begin_layout Itemize
+endfor
+\end_layout
+
+\begin_layout Itemize
+endif
+\end_layout
+
+\begin_layout Itemize
+endwhile
+\end_layout
+
+\begin_layout Itemize
+for
+\end_layout
+
+\begin_layout Itemize
+foreach
+\end_layout
+
+\begin_layout Itemize
+function
+\end_layout
+
+\begin_layout Itemize
+if
+\end_layout
+
+\begin_layout Itemize
+in
+\end_layout
+
+\begin_layout Itemize
+Input:
+\end_layout
+
+\begin_layout Itemize
+Output:
+\end_layout
+
+\begin_layout Itemize
+procedure
+\end_layout
+
+\begin_layout Itemize
+repeat
+\end_layout
+
+\begin_layout Itemize
+Require:
+\end_layout
+
+\begin_layout Itemize
+return
+\end_layout
+
+\begin_layout Itemize
+then
+\end_layout
+
+\begin_layout Itemize
+until
+\end_layout
+
+\begin_layout Itemize
+while
+\end_layout
+
+\begin_layout Standard
+Keywords are case-sensitive (a setting you can adjust in the module, by
+ changing 
+\begin_inset Quotes eld
+\end_inset
+
+sensitive=true
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+sensitive=false
+\begin_inset Quotes erd
+\end_inset
+
+).
+ A few keywords contain a colon (:).
+ Omission of the colon will cause the word not to be recognized as a keyword.
+\end_layout
+
+\begin_layout Subsection
+Additional Keywords
+\end_layout
+
+\begin_layout Standard
+One reason packages such as 
+\family typewriter
+listings
+\family default
+ do not include pseudocode is that there is no defined standard for it.
+ Everyone has their own style and preferences.
+ If you want to include keywords not recognized by the module (or stop recognizi
+ng current keywords), you can just edit the 
+\family typewriter
+pseudolst.module
+\family default
+ file in a text editor.
+ Look for 
+\begin_inset Quotes eld
+\end_inset
+
+morekeywords={\SpecialChar ldots
+}
+\begin_inset Quotes erd
+\end_inset
+
+ and tweak the list at will.
+ Feel free to suggest new keywords using the issue tracker for repository
+ where you found the module.
+\end_layout
+
+\begin_layout Subsection
+Escaping Keywords
+\end_layout
+
+\begin_layout Standard
+There may be times when you want a keyword not to be highlighted.
+ Keywords are automatically not highlighted in comments.
+ If you need a keyword to be ignored in another context, surrounded it with
+ escape characters (backticks, unless you have changed that in the module
+ file).
+ The next example shows this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "keywordstyle={\color{red}\bfseries},frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+begin // begin is highlighted at the start of the line but not in this comment
+\end_layout
+
+\begin_layout Plain Layout
+
+  wait `for` the dance to `begin`  // neither begin nor for is highlighted
+\end_layout
+
+\begin_layout Plain Layout
+
+  dance
+\end_layout
+
+\begin_layout Plain Layout
+
+end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
