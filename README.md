@@ -8,5 +8,5 @@ Bug reports and feature requests are welcome, using the issue tracker for the re
 
 Key files:
 * pseudolst.module (the module itself)
-* pseudolst.lyx (a user's guide)
-
+* pseudolst.lyx (source for the user's guide)
+* pseudolst.pdf (the compiled user's guide)
