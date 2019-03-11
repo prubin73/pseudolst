@@ -1,4 +1,4 @@
-This repository contains a LyX module to facilitate creation of pseudocode listings using the `listings` LaTeX package. It is available under the GPLv3 open-source license.
+This repository contains a LyX module to facilitate creation of pseudocode listings using the `listings` LaTeX package. It is available under the GPLv3 open-source license. Installation instructions are in the user's guide.
 
 The current (beta) version is 0.1.
 
