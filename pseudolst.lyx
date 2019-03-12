@@ -462,6 +462,29 @@ $$
 \end_layout
 
 \begin_layout Subsection
+Raw \SpecialChar LaTeX
+ in listings
+\end_layout
+
+\begin_layout Standard
+The module reserves the backtick (`) as an escape character.
+ Anything between a pair of backticks is treated as raw \SpecialChar LaTeX
+.
+ If you need literal backticks in your listings, you can change the 
+\begin_inset Quotes eld
+\end_inset
+
+escapechar={`}
+\begin_inset Quotes erd
+\end_inset
+
+ line in the module (or delete it if you never need to enter raw \SpecialChar LaTeX
+).
+ Alternatively, you can just surround a backtick with dollar signs to treat
+ it as a literal.
+\end_layout
+
+\begin_layout Subsection
 Comments
 \end_layout
 
@@ -539,27 +562,37 @@ As with everything else, you can edit the module file to change the comment
  delimiters if you wish.
 \end_layout
 
+<<<<<<< HEAD
+\begin_layout Standard
+If you need to plain text into a listing, consider surrounding it with backticks.
+ This will alter the formatting to what is likely something more visually
+ pleasing, as the following example shows.
+=======
 \begin_layout Subsection
 Raw \SpecialChar LaTeX
  in listings
+>>>>>>> master
 \end_layout
 
 \begin_layout Standard
-The module reserves the backtick (`) as an escape character.
- Anything between a pair of backticks is treated as raw \SpecialChar LaTeX
-.
- If you need literal backticks in your listings, you can change the 
-\begin_inset Quotes eld
+\begin_inset listings
+lstparams "frame=single,language=pseudocode"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+This is text entered as-is.
+\end_layout
+
+\begin_layout Plain Layout
+
+`This is text surrounded by backticks.`
+\end_layout
+
 \end_inset
 
-escapechar={`}
-\begin_inset Quotes erd
-\end_inset
 
- line in the module (or delete it if you never need to enter raw \SpecialChar LaTeX
-).
- Alternatively, you can just surround a backtick with dollar signs to treat
- it as a literal.
 \end_layout
 
 \begin_layout Subsection
@@ -768,6 +801,25 @@ We repeat Euclid's algorithm below, this time containing a reference to
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "numbers=left,mathescape=true,frame=single,language=pseudocode"
 inline false
@@ -849,6 +901,11 @@ gets z$
 \begin_layout Plain Layout
 
 }
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
