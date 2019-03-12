@@ -495,7 +495,7 @@ procedure erase(list) {
 
 \begin_layout Plain Layout
 
-    if (isNaughty(item)   // isNaughty() does what it sounds like for
+    if (isNaughty(item)   // isNaughty() does what it sounds like
 \end_layout
 
 \begin_layout Plain Layout
