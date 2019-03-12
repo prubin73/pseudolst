@@ -103,9 +103,13 @@ The
 \series bold
 Pseudocode listing
 \series default
- module (file pseudolst.module) is intended to facilitate creating pseudocode
- listings in \SpecialChar LyX
-, with program listing insets.
+ module (file 
+\family typewriter
+pseudolst.module
+\family default
+) is intended to facilitate creating pseudocode listings in \SpecialChar LyX
+, with program
+ listing insets.
  It requires the 
 \family typewriter
 listings
@@ -384,6 +388,18 @@ Now just type your pseudocode into the inset.
 \end_layout
 
 \begin_layout Subsection
+Multiple listings
+\end_layout
+
+\begin_layout Standard
+If you plan to include multiple pseudocode listings in a document, you can
+ make the aforementioned settings once, rather than repeating them for each
+ listing.
+ Use Document > Settings...
+ > Listings to set document-wide defaults for all listings.
+\end_layout
+
+\begin_layout Subsection
 Line formatting
 \end_layout
 
@@ -525,7 +541,7 @@ As with everything else, you can edit the module file to change the comment
 
 \begin_layout Subsection
 Raw \SpecialChar LaTeX
- in Listings
+ in listings
 \end_layout
 
 \begin_layout Standard
@@ -547,7 +563,7 @@ escapechar={`}
 \end_layout
 
 \begin_layout Subsection
-Vertical Bars
+Vertical bars
 \end_layout
 
 \begin_layout Standard
@@ -689,7 +705,7 @@ You may note that the keywords in this example are colored.
 \end_layout
 
 \begin_layout Subsection
-Line References
+Line references
 \end_layout
 
 \begin_layout Standard
@@ -974,7 +990,7 @@ sensitive=false
 \end_layout
 
 \begin_layout Subsection
-Additional Keywords
+Additional keywords
 \end_layout
 
 \begin_layout Standard
@@ -1005,7 +1021,7 @@ morekeywords={\SpecialChar ldots
 \end_layout
 
 \begin_layout Subsection
-Escaping Keywords
+Escaping keywords
 \end_layout
 
 \begin_layout Standard
