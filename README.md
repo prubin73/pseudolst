@@ -7,6 +7,7 @@ This module is written for LyX file format 66, the current format for LyX 2.3.1.
 Bug reports and feature requests are welcome, using the issue tracker for the repository.
 
 Key files:
+
 * pseudolst.module (the module itself)
 * pseudolst.lyx (source for the user's guide)
 * pseudolst.pdf (the compiled user's guide)
