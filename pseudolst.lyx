@@ -562,16 +562,15 @@ As with everything else, you can edit the module file to change the comment
  delimiters if you wish.
 \end_layout
 
-<<<<<<< HEAD
 \begin_layout Standard
 If you need to plain text into a listing, consider surrounding it with backticks.
  This will alter the formatting to what is likely something more visually
- pleasing, as the following example shows.
-=======
+ pleasing, as the following example shows.=======
+\end_layout
+
 \begin_layout Subsection
 Raw \SpecialChar LaTeX
- in listings
->>>>>>> master
+ in listings>>>>>>> master
 \end_layout
 
 \begin_layout Standard
@@ -937,6 +936,10 @@ The following keywords are recognized by the module:
 
 \begin_layout Itemize
 begin
+\end_layout
+
+\begin_layout Itemize
+break
 \end_layout
 
 \begin_layout Itemize

@@ -11,7 +11,7 @@ Preamble
   \usepackage{listings}
   \lstdefinelanguage{pseudocode} {
     morekeywords={
-      begin, do, else, "else if", end, endfor, endif, endwhile,
+      begin, break, do, else, "else if", end, endfor, endif, endwhile,
       for, foreach, function, if, in, Input:, Output:, procedure, 
       repeat, Require:, return, then, until, while
     },
